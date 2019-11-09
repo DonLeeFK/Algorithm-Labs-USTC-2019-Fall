@@ -75,7 +75,6 @@ def minDistance(pts):
     return minD, p, q
 
 def test_auto():
-    global start
     n=randint(1,10000)
     #n=3
     x=[uniform(1,100) for i in range(n)]
@@ -87,9 +86,7 @@ def test_auto():
         pts.append(point(x[i],y[i]))
     print(pts,end='\n')
     print('\ntested {} points'.format(n))
-    print("\nresult :",end='')
-    start=time()
-    print(minDistance(pts))
+    _test(pts)
 
 def getInput():
     str=input()
@@ -108,12 +105,16 @@ def getInput():
     return pts
 
 def test_manual():
-    global start
-    print("input coordinates")
+    print("input coordinates:")
     pts=getInput()
+    _test(pts)
+
+def _test(pts):
+    global start
     print("\nresult: ",end='')
     start=time()
     print(minDistance(pts))
+
 
 print("1.auto\n2.manual")
 flag=int(input())
@@ -121,4 +122,4 @@ if flag is 1:
     test_auto()
 elif flag is 2:
     test_manual()
-print('time  : {:.6f} s'.format(time() - start))
+print('time   : {:.6f} s'.format(time() - start))
