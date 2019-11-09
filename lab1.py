@@ -91,6 +91,7 @@ def test_auto():
 def getInput():
     str=input()
     #print("str:",str)
+    str=str.replace(';',' ')
     pair=str.split(' ')
     #print("pair:",pair)
     arg=[i.split(',') for i in pair]
