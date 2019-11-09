@@ -121,4 +121,4 @@ if flag is 1:
     test_auto()
 elif flag is 2:
     test_manual()
-print('time   : {:.6f} s'.format(time() - start))
+print('time  : {:.6f} s'.format(time() - start))
