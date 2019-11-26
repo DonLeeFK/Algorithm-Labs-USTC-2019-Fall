@@ -1,4 +1,3 @@
-from functools import total_ordering
 from random import randint
 from random import uniform
 from time import time
@@ -17,12 +16,6 @@ class point:
     def __init__(self,x,y):
         self.x=x
         self.y=y
-    #def __length__(self):
-        #return self.norm(2)
-    def __lt__(self,p):
-        return self.x < p.x or (self.x == p.x and self.y < p.y)
-    def __eq__(self, p):
-        return self.x == p.x and self.y == p.y
     def distance(self, p):
         return ((self.x - p.x)**2 + (self.y - p.y)**2)**0.5
     def __repr__(self):
@@ -51,7 +44,7 @@ def minDistance(pts):
     if minD > d2:
         minD, p, q = d2, p2, q2
     
-    linePoints = linePoints = findif(s1, lambda pt: floatEql(pt.x, mid), reverse=True)
+    linePoints = findif(s1, lambda pt: floatEql(pt.x, mid), reverse=True)
     linePoints += findif(s2, lambda pt: floatEql(pt.x, mid))
     n = len(linePoints)
     if n > 1:
